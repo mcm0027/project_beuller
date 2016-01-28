@@ -130,7 +130,6 @@ addAnswer("answer2", "button2", answer2);
       reverseProduct = reverse(productString);
       if (product == reverseProduct && product > answer4) {
         answer4 = product;
-        console.log(answer4);
       }
     }
   }
@@ -138,24 +137,66 @@ addAnswer("answer2", "button2", answer2);
 })();
 
 
-// A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+//5. 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
 
-// Find the largest palindrome made from the product of two 3-digit numbers.
+//What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 
 ( function () {
   var answer5;
+  var bigNum = 500000000;
+  var oldI = bigNum;
   var record = 0;
-  for(var i = 0; i < 1000000; i ++) {
-    for(var j = 1; j < 20; j++) {
+  loop1:
+  for(var i = 0; i < bigNum; i ++) {
+    loop2:
+    for(var j = 1; j < 21; j++) {
       if(i % j === 0) {
         record +=1;
-        if(record === 5){
-        console.log(i);
+        if(record === 20){
+          if (i < oldI && i > 0) {
+            answer5 = i;
+            oldI = i;
+            break loop1;
+          } else {
+            break;
+          }
         }
+      } else {
+        break;
       }
     }
     record = 0;
   };
-
   addAnswer("answer5", "button5", answer5);
+})();
+
+// The sum of the squares of the first ten natural numbers is,
+
+// 12 + 22 + ... + 102 = 385
+// The square of the sum of the first ten natural numbers is,
+
+// (1 + 2 + ... + 10)2 = 552 = 3025
+// Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.
+
+// Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+
+( function () {
+  var answer6;
+  var x = 0;
+  var y = 0;
+
+  for(var i = 1; i <= 100; i++){
+    x += i * i;
+  }
+  console.log(x);
+  for(var i = 1; i <= 100; i++){
+    y += i;
+  }
+
+  var z = y * y;
+  console.log(z);
+  answer6 = z - x;
+  console.log(answer6);
+
+  //addAnswer("answer6", "button6", answer6);
 })();
