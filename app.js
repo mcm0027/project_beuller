@@ -188,15 +188,66 @@ addAnswer("answer2", "button2", answer2);
   for(var i = 1; i <= 100; i++){
     x += i * i;
   }
-  console.log(x);
+
   for(var i = 1; i <= 100; i++){
     y += i;
   }
 
   var z = y * y;
-  console.log(z);
-  answer6 = z - x;
-  console.log(answer6);
 
-  //addAnswer("answer6", "button6", answer6);
+  answer6 = z - x;
+
+
+  addAnswer("answer6", "button6", answer6);
+})();
+
+// By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+
+// What is the 10 001st prime number?
+
+( function () {
+
+  var answer7;
+  var startNumber = 10000000;
+  var newPrime;
+  var primes = 0;
+  var primeBreak1 = 5000;
+  var primeBreakTotal = 10002;
+
+  for(var i = 0; i < startNumber; i++) {
+    var prime = true;
+    for(var j = 0; j < i; j++) {
+      if (i % j === 0 && j !== 1) {
+        prime = false;
+        break;
+      }
+    }
+    if (prime === true && i > 1) {
+        newPrime = i;
+        primes++;
+    }
+    if(primes >= primeBreak1) {
+      console.log(newPrime);
+      break;
+    }
+  }
+
+  for(var i = newPrime; i < startNumber; i++) {
+    var prime = true;
+    for(var j = 0; j < i; j++) {
+      if (i % j === 0 && j !== 1) {
+        prime = false;
+        break;
+      }
+    }
+    if (prime === true && i > 1) {
+        newPrime = i;
+        primes++;
+    }
+    if(primes >= primeBreakTotal) {
+      console.log(newPrime);
+      break;
+    }
+  }
+  answer7 = newPrime;
 })();
