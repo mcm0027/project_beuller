@@ -308,14 +308,17 @@ var answersShowing = {
 ( function () {
 
   var length = 1000;
-  var cool = 0;
   for(var i = 0; i <= length; i++) {
     for(var j = 0; j <= length; j++) {
       for(var k = 0; k <= length; k++) {
-        cool += i+j+k;
+        if (i<j && j<k && ((i*i) + (j*j) === (k*k)) && i + j + k === 1000) {
+          console.log(i);
+          console.log(j);
+          console.log(k);
+          console.log(i*j*k);
+        }
       }
     }
   }
-  console.log(cool);
 
   })();
