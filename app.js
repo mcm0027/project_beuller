@@ -264,36 +264,36 @@ var answersShowing = {
 //73167...52963450 (really big number)
 
 //Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
-
-( function () {
-  var bigNumString = "731671765313306249192251196744265747423553491949349698352031277450632623957831801698480186947885184385861560789112949495459501737958331952853208805511125406987471585238630507156932909632952274430435576689664895044524452316173185640309871112172238311362229893423380308135336276614282806444486645238749303589072962904915604407723907138105158593079608667017242712188399879790879227492190169972088809377665727333001053367881220235421809751254540594752243525849077116705560136048395864467063244157221553975369781797784617406495514929086256932197846862248283972241375657056057490261407972968652414535100474821663704844031998900088952434506585412275886668811642717147992444292823086346567481391912316282458617866458359124566529476545682848912883142607690042242190226710556263211111093705442175069416589604080719840385096245544436298123098787992724428490918884580156166097919133875499200524063689912560717606058861164671094050775410022569831552000559357297257163626956188267042825248360082325753042075296340";
-
-
-  var length = bigNumString.length;
-  var factor = 13;
-  var answer8 = 0;
-  var expo = 0;
-  var numAdd = [];
-  var numMult;
-  var factorFunc = function(i, factor) {
-    numMult = 1;
-    for(var k = 0; k < factor; k++) {
-      numAdd.push(bigNumString.charAt(i + k) || 0);
-    }
-    for(var j = 0; j < factor; j++){
-      numMult *= numAdd.pop();
-    }
-    return numMult;
-  };
-
-  for(var i = 0; i <= length - factor; i++) {
-    expo = factorFunc(i, factor);
-    if(expo >= answer8) {
-      answer8 = expo;
-    }
-  }
-  addAnswer("answer8", "button8", answer8);
-})();
+//
+//( function () {
+//  var bigNumString = "731671765313306249192251196744265747423553491949349698352031277450632623957831801698480186947885184385861560789112949495459501737958331952853208805511125406987471585238630507156932909632952274430435576689664895044524452316173185640309871112172238311362229893423380308135336276614282806444486645238749303589072962904915604407723907138105158593079608667017242712188399879790879227492190169972088809377665727333001053367881220235421809751254540594752243525849077116705560136048395864467063244157221553975369781797784617406495514929086256932197846862248283972241375657056057490261407972968652414535100474821663704844031998900088952434506585412275886668811642717147992444292823086346567481391912316282458617866458359124566529476545682848912883142607690042242190226710556263211111093705442175069416589604080719840385096245544436298123098787992724428490918884580156166097919133875499200524063689912560717606058861164671094050775410022569831552000559357297257163626956188267042825248360082325753042075296340";
+//
+//
+//  var length = bigNumString.length;
+//  var factor = 13;
+//  var answer8 = 0;
+//  var expo = 0;
+//  var numAdd = [];
+//  var numMult;
+//  var factorFunc = function(i, factor) {
+//    numMult = 1;
+//    for(var k = 0; k < factor; k++) {
+//      numAdd.push(bigNumString.charAt(i + k) || 0);
+//    }
+//    for(var j = 0; j < factor; j++){
+//      numMult *= numAdd.pop();
+//    }
+//    return numMult;
+//  };
+//
+//  for(var i = 0; i <= length - factor; i++) {
+//    expo = factorFunc(i, factor);
+//    if(expo >= answer8) {
+//      answer8 = expo;
+//    }
+//  }
+//  addAnswer("answer8", "button8", answer8);
+//})();
 
 // A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
 
@@ -302,22 +302,48 @@ var answersShowing = {
 
 // There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 // Find the product abc.
+//
+//
+//( function () {
+//  var answer9 = 0;
+//  var length = 1000;
+//  for(var i = 0; i <= length; i++) {
+//    for(var j = 0; j <= length; j++) {
+//      for(var k = 0; k <= length; k++) {
+//        if (i<j && j<k && ((i*i) + (j*j) === (k*k)) && i + j + k === 1000) {
+//          console.log(i);
+//          console.log(j);
+//          console.log(k);
+//          answer9 = (i*j*k);
+//        }
+//      }
+//    }
+//  }
+//  addAnswer("answer9", "button9", answer9);
+//  })();
 
+//The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+
+//Find the sum of all the primes below two million.
 
 ( function () {
-  var answer9 = 0;
-  var length = 1000;
-  for(var i = 0; i <= length; i++) {
-    for(var j = 0; j <= length; j++) {
-      for(var k = 0; k <= length; k++) {
-        if (i<j && j<k && ((i*i) + (j*j) === (k*k)) && i + j + k === 1000) {
-          console.log(i);
-          console.log(j);
-          console.log(k);
-          answer9 = (i*j*k);
-        }
-      }
-    }
+  var answer10 = 0;
+  var final = 100000;
+  var newPrime = 0;
+
+  for(var i = 0; i < final; i++) {
+     var prime = true;
+          for (var j = 0; j < i; j++) {
+              if (i % j === 0 && j !== 1) {
+                  prime = false;
+                  break;
+              }
+          }
+     if (prime === true && i > 1) {
+         console.log(newPrime)
+        newPrime = i;
+     }
   }
-  addAnswer("answer9", "button9", answer9);
-  })();
+
+    addAnswer("answer10", "button10", answer10);
+})();
