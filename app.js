@@ -1,12 +1,15 @@
 var answersShowing = {
-  answer1: false,
-  answer2: false,
-  answer3: false,
-  answer4: false,
-  answer5: false,
-  answer6: false,
-  answer7: false,
-  answer8: false
+    answer1: false,
+    answer2: false,
+    answer3: false,
+    answer4: false,
+    answer5: false,
+    answer6: false,
+    answer7: false,
+    answer8: false,
+    answer9: false,
+    asnwer10: false,
+    answer11: false
 };
 
  var addAnswer = function(answer, button, answerVar) {
@@ -347,3 +350,15 @@ var answersShowing = {
 
     addAnswer("answer10", "button10", answer10);
 })();
+
+
+//In the 20×20 grid below, four numbers along a diagonal line have been marked in red.
+//The product of these numbers is 26 × 63 × 78 × 14 = 1788696.
+//What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally) in the 20×20 grid?
+
+( function () {
+    var answer11 = 0;
+
+addAnswer("answer11", "button11", answer11);
+})();
+
