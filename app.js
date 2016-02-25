@@ -377,16 +377,16 @@ addAnswer("answer11", "button11", answer11);
     var divisorNums = [];
 
     for(var i = 1; i < 4000; i++ ) {
-        if(divisorNums.length === 200) {
+        if(divisorNums.length === 5) {
             console.log(triangleNum);
             break;
         }
         divisorNums = [];
         triangleNum += i;
-        for (j = 1; j <= 200000; j++){
+        for (j = 0; j < (triangleNum* 0.6); j++){
             if(triangleNum % j === 0){
                 divisorNums.push(j);
-                if(divisorNums.length === 200) {
+                if(divisorNums.length === 5) {
                     console.log(triangleNum);
                     break;
                 }
